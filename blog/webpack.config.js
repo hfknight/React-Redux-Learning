@@ -1,7 +1,11 @@
+const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
   entry: ['./src/index.js'],
   output: {
-    path: __dirname,
+    // path: __dirname,
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -21,7 +25,8 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
+    contentBase: './dist',
+    port: 3000,
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000

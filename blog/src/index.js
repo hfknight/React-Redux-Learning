@@ -11,6 +11,10 @@ import PostsIndex from './components/posts_index';
 import PostsNew from './components/posts_new';
 import PostsShow from './components/posts_show';
 
+if (process.env.NODE_ENV !== 'production') {
+  console.log("We are not in developement mode!");
+}
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 

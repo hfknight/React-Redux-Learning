@@ -9,6 +9,8 @@ module.exports = merge(common, {
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
-    }
+    },
+    open: true,
+    openPage: '/' 
   }
 });

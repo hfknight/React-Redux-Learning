@@ -1,16 +1,24 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-// import {selectBook} from '../actions/index';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchDogBreedList } from '../actions';
 // import {bindActionCreators} from 'redux';
 
 class DogBreeds extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {breeds: ["a"]};
+  // }
+  componentDidMount() {
+    this.props.fetchDogBreedList();
+  }  
   renderList() {
-    return this.props.breeds.map(book => (
+    console.log(this.props.breeds);
+    return this.props.breeds.map(breed => (
       <li 
-        key={book.title}
+        key={breed}
         // onClick={() => this.props.selectBook(book)}
         className='list-group-item'>
-          {book.title}
+          {breed}
         </li>
     ));
   }
@@ -28,8 +36,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectBook: selectBook }, dispatch);
-}
-
-export default connect(mapStateToProps, {fetchDogBreeds})(DogBreeds);
+export default connect(mapStateToProps, { fetchDogBreedList })(DogBreeds);

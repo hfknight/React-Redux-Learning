@@ -10,8 +10,8 @@ const lab_projects = [
   },
   {
     "id": 2,
-    "name": "Book List",
-    "link": "/booklist"
+    "name": "Dog Breeds",
+    "link": "/dog-breeds"
   },
   {
     "id": 3,

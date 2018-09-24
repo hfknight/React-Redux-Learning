@@ -4,6 +4,7 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
+    historyApiFallback: true, //cannot get url refresh error fix
     contentBase: "./dist",
     port: 3000,
     watchOptions: {

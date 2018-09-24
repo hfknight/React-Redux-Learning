@@ -4,6 +4,7 @@ export const FETCH_POSTS = 'fetch_posts';
 export const CREATE_POST = 'create_post';
 export const FETCH_POST = 'fetch_post';
 export const DELETE_POST = 'delete_post';
+export const FETCH_BREED_LIST = 'fetch_breeds';
 
 const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
 const API_KEY = '?key=FHKEY9921';
@@ -42,4 +43,13 @@ export function deletePost(id, callback) {
     type: DELETE_POST,
     payload: id
   }
+}
+
+export function fetchDogBreedList() {
+  const request = axios.get('https://dog.ceo/api/breeds/list/all');
+  console.log("action: " + request);
+  return {
+    type: FETCH_BREED_LIST,
+    payload: request
+  };
 }

@@ -6,3 +6,6 @@ npm-debug.log
 # IntelliJ
 *.iml
 /.idea
+blog/dist/app.bundle.js
+blog/dist/app.bundle.js.map
+blog/dist/print.bundle.js

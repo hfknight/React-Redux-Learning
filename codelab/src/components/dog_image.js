@@ -9,11 +9,11 @@ class DogImage extends Component {
     if(!this.props.dog) {
       return (<div>Please Select a dog breed to get started.</div>);
     }
-    const { name, image } = this.props.dog;
+    // const { name, image } = this.props.dog;
     return (
       <div>
-        <h2>Random Image for: {name}</h2>
-        <img src={image} />
+        {/* <h2>Random Image for: {name}</h2> */}
+        <img src={this.props.dog} />
       </div>
     );
   }

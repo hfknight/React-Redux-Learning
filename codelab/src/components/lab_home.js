@@ -15,14 +15,14 @@ const lab_projects = [
   },
   {
     "id": 3,
-    "name": "Weather",
-    "link": "/weather"
+    "name": "TODO",
+    "link": "/todo-list"
   }    
 ];
 export default class LabHome extends Component {
   render() {
     return (
-      <ul className="lab_proj_list nav list-group">
+      <ul className="lab_proj_list nav list-group col-sm-4">
       {_.map(lab_projects, project => {
        return (
         <li className="nav-item list-group-item" key={project.id}>

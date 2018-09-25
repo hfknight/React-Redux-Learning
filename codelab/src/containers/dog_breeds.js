@@ -1,34 +1,40 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchDogBreedList, fetchDogImage } from '../actions';
-import DogImage from '../components/dog_image';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchDogBreedList, fetchDogImage } from "../actions";
+import DogImage from "../components/dog_image";
+import _ from 'lodash';
 // import {bindActionCreators} from 'redux';
 
 class DogBreeds extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {breeds: ["a"]};
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      theBreed: ''
+    };
+  }
   componentDidMount() {
+    console.log(' Dog Breeds Container - Component Did Mount');
     this.props.fetchDogBreedList();
   }
+
   renderList() {
     // console.log(this.props.breeds);
+    const btnStyles = ["primary", "secondary", "success", "info", "light"];
     return this.props.breeds.map(breed => (
       <li
         key={breed}
-        onClick={() => this.props.fetchDogImage(breed)}
-        className='list-group-item'>
-        {breed}
+        onClick={() => { this.props.fetchDogImage(breed) }}
+        className="list-group-item"
+      >
+        <button type="button" className={`btn btn-${_.sample(btnStyles)}`}>{breed.toUpperCase()}</button>
       </li>
     ));
   }
   render() {
     return (
       <div className="main">
-        <ul className='list-group col-sm-4'>{this.renderList()}</ul>
-        <DogImage />
-
+        <ul className="list-group col-sm-4">{this.renderList()}</ul>
+        <DogImage dog={this.props.selectedDog} />
       </div>
     );
   }
@@ -37,8 +43,12 @@ class DogBreeds extends Component {
 // returned State > Props
 function mapStateToProps(state) {
   return {
-    breeds: state.breeds
+    breeds: state.breeds,
+    selectedDog: state.selectedDog
   };
 }
 
-export default connect(mapStateToProps, { fetchDogBreedList, fetchDogImage })(DogBreeds);
+export default connect(
+  mapStateToProps,
+  { fetchDogBreedList, fetchDogImage }
+)(DogBreeds);

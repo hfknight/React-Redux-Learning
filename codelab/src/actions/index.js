@@ -48,7 +48,6 @@ export function deletePost(id, callback) {
 
 export function fetchDogBreedList() {
   const request = axios.get('https://dog.ceo/api/breeds/list/all');
-  console.log("action: " + request);
   return {
     type: FETCH_BREED_LIST,
     payload: request
@@ -57,9 +56,9 @@ export function fetchDogBreedList() {
 
 export function fetchDogImage(name) {
   const request = axios.get(`https://dog.ceo/api/breed/${name}/images`);
-  const image = _.sample(request["messages"]);
+  // const image = _.sample(request["messages"]);
   return {
     type: FETCH_DOG_IMAGE,
-    payload: {name, image}
+    payload: request //{name, image}
   };
 }

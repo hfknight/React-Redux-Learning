@@ -11,7 +11,7 @@ import PostsIndex from './components/posts_index';
 import PostsNew from './components/posts_new';
 import PostsShow from './components/posts_show';
 import LabHome from './components/lab_home';
-import DogBreeds from './containers/dog_breeds';
+import DogBreedList from './components/dog_breed_list';
 
 if (process.env.NODE_ENV !== 'production') {
   console.log("We are not in developement mode!");
@@ -30,7 +30,7 @@ ReactDOM.render(
           <Route path="/posts/new" component={PostsNew} />
           <Route path="/posts/:id" component={PostsShow} />
           <Route path="/posts" component={PostsIndex} />
-          <Route path="/dog-breeds" component={DogBreeds} />
+          <Route path="/dog-breeds" component={DogBreedList} />
           <Route path="/" component={LabHome} />
         </Switch>
       </div>

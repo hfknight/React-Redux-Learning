@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDogBreedList } from '../actions';
+import { fetchDogBreedList, fetchDogImage } from '../actions';
+import DogImage from '../components/dog_image';
 // import {bindActionCreators} from 'redux';
 
 class DogBreeds extends Component {
@@ -10,22 +11,26 @@ class DogBreeds extends Component {
   // }
   componentDidMount() {
     this.props.fetchDogBreedList();
-  }  
+  }
   renderList() {
-    console.log(this.props.breeds);
+    // console.log(this.props.breeds);
     return this.props.breeds.map(breed => (
-      <li 
+      <li
         key={breed}
-        // onClick={() => this.props.selectBook(book)}
+        onClick={() => this.props.fetchDogImage(breed)}
         className='list-group-item'>
-          {breed}
-        </li>
+        {breed}
+      </li>
     ));
   }
   render() {
-    return   (
-      <ul className='list-group col-sm-4'>{this.renderList()}</ul>
-    )
+    return (
+      <div className="main">
+        <ul className='list-group col-sm-4'>{this.renderList()}</ul>
+        <DogImage />
+
+      </div>
+    );
   }
 }
 
@@ -36,4 +41,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { fetchDogBreedList })(DogBreeds);
+export default connect(mapStateToProps, { fetchDogBreedList, fetchDogImage })(DogBreeds);

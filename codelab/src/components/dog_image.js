@@ -11,7 +11,7 @@ class DogImage extends Component {
     }
     // const { name, image } = this.props.dog;
     return (
-      <div>
+      <div className="col-sm-4">
         {/* <h2>Random Image for: {name}</h2> */}
         <img src={this.props.dog} />
       </div>

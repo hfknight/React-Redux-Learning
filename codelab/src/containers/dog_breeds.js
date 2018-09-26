@@ -23,8 +23,8 @@ class DogBreeds extends Component {
     return this.props.breeds.map(breed => (
       <li
         key={breed}
-        onClick={() => { this.props.fetchDogImage(breed) }}
-        className="list-group-item"
+        onClick={() => { this.props.fetchDogImage(breed); this.props.callBackFromParent(breed) }}
+        className="list-group-item p-2"
       >
         <button type="button" className={`btn btn-${_.sample(btnStyles)}`}>{breed.toUpperCase()}</button>
       </li>
@@ -32,8 +32,8 @@ class DogBreeds extends Component {
   }
   render() {
     return (
-      <div className="main">
-        <ul className="list-group col-sm-4">{this.renderList()}</ul>
+      <div className="dog-breed-list-container">
+        <ul className="list-group d-flex justify-content-center col-sm-6">{this.renderList()}</ul>
         <DogImage dog={this.props.selectedDog} />
       </div>
     );

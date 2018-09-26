@@ -9,7 +9,9 @@ export class DogBreedList extends Component {
       selectedName: ''
     };
   }
-
+  updateFromChild = (childData) => {
+    this.setState({ selectedName: childData })
+  }
   render() {
     return (
       <div>
@@ -20,7 +22,7 @@ export class DogBreedList extends Component {
           </p>
           <p className="my-4">You Selected: {this.state.selectedName}</p>
         </div>
-        <DogBreeds />
+        <DogBreeds callBackFromParent={ this.updateFromChild }/>
       </div>
     );
   }

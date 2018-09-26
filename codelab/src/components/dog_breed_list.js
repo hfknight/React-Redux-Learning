@@ -16,7 +16,7 @@ export class DogBreedList extends Component {
     return (
       <div>
         <div className="jumbotron">
-          <h2 className="display-4">Dog Breed List</h2>
+          <h2 className="display-4">Dog Breed List&nbsp;<i className="fas fa-paw fa-spin"></i></h2>
           <p className="lead">
             Click the link to load a random image from this breed.
           </p>

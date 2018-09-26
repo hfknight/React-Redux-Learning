@@ -13,7 +13,7 @@ class DogImage extends Component {
     return (
       <div className="dog-image-wrapper col-sm-4">
         {/* <h2>Random Image for: {name}</h2> */}
-        <img src={this.props.dog} />
+        <img className="glow" src={this.props.dog} />
       </div>
     );
   }

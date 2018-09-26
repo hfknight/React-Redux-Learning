@@ -1,5 +1,19 @@
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px #1800d7; }
+  40% { box-shadow: 0 0 20px #1800d7; }
+  60% { box-shadow: 0 0 20px #1800d7; }
+  100% { box-shadow: 0 0 -10px #1800d7; }
+}
+
+.glow {
+  animation: glowing 5000ms infinite;
+}
+
 .jumbotron {
   background-color: #f2f5ff !important;
+  i.fas {
+    color: #8300d7;
+  }
   em {
     color: #3600cd;
     text-transform: capitalize;

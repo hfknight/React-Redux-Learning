@@ -20,7 +20,7 @@ export class DogBreedList extends Component {
           <p className="lead">
             Click the link to load a random image from this breed.
           </p>
-          <p className="my-4">You Selected: {this.state.selectedName}</p>
+          <p className="my-4">You Selected: <em>{this.state.selectedName}</em></p>
         </div>
         <DogBreeds callBackFromParent={ this.updateFromChild }/>
       </div>

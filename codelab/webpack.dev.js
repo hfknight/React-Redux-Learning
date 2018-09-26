@@ -11,7 +11,7 @@ module.exports = merge(common, {
       aggregateTimeout: 300,
       poll: 1000
     },
-    open: true,
+    // open: true,
     openPage: '/' 
   }
 });

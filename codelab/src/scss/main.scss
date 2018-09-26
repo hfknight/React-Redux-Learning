@@ -1,0 +1,26 @@
+.jumbotron {
+  background-color: #f2f5ff !important;
+  em {
+    color: #3600cd;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    transition: all 1s ease-in-out;
+  }
+}
+
+.dog-breed-list-container {
+  .list-group-item {
+    display: inline-block;
+    padding: 0.5em 0;
+    text-align: center;
+    width: 33%;
+  }
+}
+.dog-image-wrapper {
+  position: fixed !important;
+  left: 50%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

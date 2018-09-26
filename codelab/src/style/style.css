@@ -1,6 +1,9 @@
 form a {
   margin-left: 1em;
 }
+.dog-breed-list-container {
+  background: #ccc;
+}
 .dog-breed-list-container .list-group-item {
   display: inline-block;
   padding: 0.5em 0;

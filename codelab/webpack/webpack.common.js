@@ -1,5 +1,5 @@
-const path = require("path");
-
+const commonPaths = require('./webpack.path');
+// const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
@@ -26,7 +26,9 @@ module.exports = {
   ],
   output: {
     filename: "[name].bundle.[chunkhash].js",
-    path: path.resolve(__dirname, "dist")
+    // path: path.resolve(__dirname, "dist"),
+    path: commonPaths.outputPath,
+    publicPath: '/'
   },
   module: {
     rules: [

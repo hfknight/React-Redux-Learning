@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import DogBreeds from '../containers/dog_breeds';
 
@@ -21,6 +22,7 @@ export class DogBreedList extends Component {
             Click the link to load a random image from this breed.
           </p>
           <p className="my-4">You Selected: <em>{this.state.selectedName}</em></p>
+          <Link className="btn btn-link" to='/'>Go Back Home</Link>
         </div>
         <DogBreeds callBackFromParent={ this.updateFromChild }/>
       </div>
